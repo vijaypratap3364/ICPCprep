@@ -4,11 +4,7 @@
         {
             "label": "compile and run",
             "type": "shell",
-            "command": "cmd.exe",
-            "args": [
-                "/c",
-                "g++ -std=c++17 -m64 -o \"${fileBasenameNoExtension}.exe\" \"${file}\" && \"${fileBasenameNoExtension}.exe\" < input.txt > output.txt"
-            ],
+            "command": "cd /d \"${fileDirname}\" && g++ -std=c++17 -m64 -o \"${fileBasenameNoExtension}.exe\" \"${fileBasename}\" && \"${fileBasenameNoExtension}.exe\" < input.txt > output.txt && code output.txt",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -16,7 +12,7 @@
             "options": {
                 "shell": {
                     "executable": "cmd.exe",
-                    "args": ["/d", "/c"]
+                    "args": ["/c"]
                 }
             }
         }
