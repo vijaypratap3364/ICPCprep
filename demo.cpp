@@ -1,23 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void pattern(int n) {
-    for (int i=1; i<=n; i++){
-        for (int j=1; j<=i; j++){
-            cout<< j;
-        } for (int j=1; j<=2*(n-i); j++){
-            cout<< " ";
-        } for (int j = 1; j<=i; j++){
-            cout << j;
-        }
-        cout << endl;
+int recursion(int n) {
+    if (n == 0){
+        return 1 ;
     }
-}
+    return n * recursion(n-1);
+} 
 
 int main() {
     int n;
     cin >> n;
-    pattern(n);
+    cout << recursion(n);
+     
 
     return 0;
 }
