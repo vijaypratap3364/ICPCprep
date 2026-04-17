@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int recursion(int n) {
-    if (n == 0){
-        return 1 ;
+auto recursion(int a) {
+    if (a <= 1){
+        return a;
     }
-    return n * recursion(n-1);
+    return recursion(a-1)+ recursion(a-2); 
 } 
 
 int main() {
